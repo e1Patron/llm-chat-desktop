@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.aichatinterface.controller.MainController"
+            prefWidth="900" prefHeight="600"
+            styleClass="root-pane">
+
+    <left>
+        <VBox prefWidth="220" styleClass="sidebar">
+            <Button text="+ Neuer Chat"
+                    onAction="#newChat"
+                    styleClass="new-chat-btn"
+                    maxWidth="Infinity"/>
+            <Button text="📊 Statistiken"
+                    onAction="#toggleStats"
+                    styleClass="stats-toggle-btn"
+                    maxWidth="Infinity"/>
+            <Label text="Verlauf" styleClass="sidebar-label"/>
+            <ListView fx:id="sessionList" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <center>
+        <HBox>
+            <VBox HBox.hgrow="ALWAYS" styleClass="chat-area">
+
+                <ScrollPane fx:id="scrollPane"
+                            VBox.vgrow="ALWAYS"
+                            fitToWidth="true"
+                            styleClass="scroll-pane">
+                    <VBox fx:id="chatBox"
+                          spacing="8"
+                          styleClass="chat-box"/>
+                </ScrollPane>
+
+                <HBox styleClass="input-area" spacing="10">
+                    <TextField fx:id="inputField"
+                               promptText="Nachricht eingeben..."
+                               HBox.hgrow="ALWAYS"
+                               onAction="#sendMessage"
+                               styleClass="input-field"/>
+                    <Button text="Senden"
+                            onAction="#sendMessage"
+                            styleClass="send-btn"/>
+                </HBox>
+
+            </VBox>
+
+            <fx:include fx:id="statistics" source="statistics-view.fxml" />
+
+        </HBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,143 @@
+.root-pane {
+    -fx-background-color: #1e1e1e;
+}
+
+/* SIDEBAR */
+.sidebar {
+    -fx-background-color: #2b2b2b;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.new-chat-btn {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+}
+
+.new-chat-btn:hover {
+    -fx-background-color: #505050;
+}
+
+.stats-toggle-btn {
+    -fx-background-color: #2b3d5c;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+}
+
+.stats-toggle-btn:hover {
+    -fx-background-color: #3a5070;
+}
+
+.sidebar-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 12px;
+    -fx-padding: 8 0 4 0;
+}
+
+/* CHAT BEREICH */
+.chat-area {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 0;
+    -fx-spacing: 0;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.chat-box {
+    -fx-padding: 16;
+    -fx-background-color: transparent;
+}
+
+/* BUBBLES */
+.bubble-user {
+    -fx-background-color: #2f6fcf;
+    -fx-text-fill: white;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 16;
+    -fx-font-size: 14px;
+}
+
+.bubble-ai {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 16;
+    -fx-font-size: 14px;
+}
+
+/* INPUT BEREICH */
+.input-area {
+    -fx-background-color: #2b2b2b;
+    -fx-padding: 12;
+}
+
+.input-field {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888888;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+    -fx-font-size: 14px;
+}
+
+.send-btn {
+    -fx-background-color: #2f6fcf;
+    -fx-text-fill: white;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.send-btn:hover {
+    -fx-background-color: #1a5bbf;
+}
+
+/* STATISTIK-PANEL */
+.stats-panel {
+    -fx-background-color: #252525;
+    -fx-padding: 12;
+    -fx-pref-width: 200;
+    -fx-min-width: 200;
+    -fx-spacing: 10;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 0 0 1;
+}
+
+.stats-title {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 0;
+}
+
+.stats-card {
+    -fx-background-color: #2e2e2e;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+}
+
+.stats-key {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+}
+
+.stats-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
