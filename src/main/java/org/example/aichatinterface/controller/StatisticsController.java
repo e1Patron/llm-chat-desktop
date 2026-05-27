@@ -3,9 +3,11 @@ package org.example.aichatinterface.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.example.aichatinterface.model.ChatSession;
+import org.example.aichatinterface.model.Message;
 import org.example.aichatinterface.model.StatisticsCalculator;
 
-// Steuert das Statistik-Panel und aktualisiert die Labels wenn sich was ändert
+import java.util.List;
+
 public class StatisticsController {
 
     @FXML private Label labelMessageCount;
@@ -15,7 +17,6 @@ public class StatisticsController {
 
     private final StatisticsCalculator calculator = new StatisticsCalculator();
 
-    // Wird vom MainController aufgerufen sobald eine neue Nachricht da ist
     public void update(ChatSession session) {
         if (session == null) {
             labelMessageCount.setText("0");
@@ -25,7 +26,7 @@ public class StatisticsController {
             return;
         }
 
-        var messages = session.getMessages();
+        List<Message> messages = session.getMessages();
 
         labelMessageCount.setText(String.valueOf(calculator.countMessages(messages)));
         labelAvgLength.setText(String.format("%.1f", calculator.averageMessageLength(messages)));

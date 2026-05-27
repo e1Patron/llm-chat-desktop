@@ -22,7 +22,6 @@ public class MainController {
     @FXML private ListView<String> sessionList;
     @FXML private VBox statsPanel;
 
-    // JavaFX setzt diesen automatisch weil fx:id="statistics" in der FXML steht
     @FXML private StatisticsController statisticsController;
 
     private ChatSession currentSession;
@@ -40,10 +39,9 @@ public class MainController {
         sessionList.getItems().add(currentSession.getName());
         sessionList.getSelectionModel().selectLast();
         chatBox.getChildren().clear();
-        aktualisiereStats();
+        updateStats();
     }
 
-    // Ein- und Ausblenden des Statistik-Panels per Button
     @FXML
     public void toggleStats() {
         statsVisible = !statsVisible;
@@ -60,16 +58,15 @@ public class MainController {
         currentSession.addMessage(userMessage);
         addBubble(text, true);
         inputField.clear();
-        aktualisiereStats();
+        updateStats();
 
-        // Simulierte KI-Antwort nach 1 Sekunde
         PauseTransition pause = new PauseTransition(Duration.seconds(1));
         pause.setOnFinished(e -> {
             String aiText = "Simulierte Antwort auf: \"" + text + "\"";
             Message aiMessage = new Message(aiText, Message.Sender.AI);
             currentSession.addMessage(aiMessage);
             addBubble(aiText, false);
-            aktualisiereStats();
+            updateStats();
         });
         pause.play();
     }
@@ -89,8 +86,7 @@ public class MainController {
         scrollPane.setVvalue(1.0);
     }
 
-    // Gibt die aktuellen Chat-Daten an den StatisticsController weiter
-    private void aktualisiereStats() {
+    private void updateStats() {
         if (statisticsController != null) {
             statisticsController.update(currentSession);
         }
