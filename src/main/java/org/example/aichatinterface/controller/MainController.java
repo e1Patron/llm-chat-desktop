@@ -52,7 +52,11 @@ public class MainController {
     @FXML
     public void sendMessage() {
         String text = inputField.getText().trim();
-        if (text.isEmpty()) return;
+        if (text.isEmpty()) {
+            inputField.setStyle("-fx-border-color: red; -fx-border-radius: 8;");
+            return;
+        }
+        inputField.setStyle("");
 
         Message userMessage = new Message(text, Message.Sender.USER);
         currentSession.addMessage(userMessage);

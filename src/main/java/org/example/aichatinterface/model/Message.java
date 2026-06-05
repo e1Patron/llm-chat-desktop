@@ -5,7 +5,7 @@ public class Message {
 
     // Unterscheidung ob die Nachricht vom User oder der KI kommt
     public enum Sender {
-        USER, AI
+        USER, AI,
     }
 
     private String text;
@@ -14,6 +14,7 @@ public class Message {
     public Message(String text, Sender sender) {
         this.text = text;
         this.sender = sender;
+
     }
 
     public String getText() {
