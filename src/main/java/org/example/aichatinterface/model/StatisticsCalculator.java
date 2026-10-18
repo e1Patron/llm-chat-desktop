@@ -1,5 +1,4 @@
 package org.example.aichatinterface.model;
-
 import java.util.List;
 
 public class StatisticsCalculator {
